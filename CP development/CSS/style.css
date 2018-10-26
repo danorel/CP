@@ -1,0 +1,41 @@
+html{
+    height: 100%;
+}
+
+body {
+    background-image: url("../images/image.jpg");
+    background-repeat: repeat;
+    justify-content: center;
+    font-family: Fertigo;
+}
+
+article{
+    width: 320px;
+    align: center;
+    font-family: Fertigo;
+}
+
+input{
+    font-family: Fertigo;
+    font-size: 16px;
+    width: 132px;
+    height: 25px;
+}
+
+header {
+    align: center;
+}
+
+footer {
+    margin-top: 15%;
+}
+
+nav {
+    position: fixed;
+    border: 5px solid white;
+    border-radius: 1px;
+}
+
+#Main-logo{
+    margin-top: 20px;
+}

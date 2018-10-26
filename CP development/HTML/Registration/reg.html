@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../vendor/bulma.min.css">
+    <link href="../../CSS/style.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript">
+        function Check(){
+            var password = document.getElementById("input2").value;
+            var login = document.getElementById("input1").value;
+
+            if(password.length == 0){
+                document.getElementById("progrs").value = 0;
+                document.getElementById("input2").className = "input is-danger";
+                document.getElementById("passP").style.color = "red";
+                document.getElementById("passP").innerText = "Re-enter password!";
+                alert("You've not entered password!");
+            }else if(password.length < 10){
+                document.getElementById("progrs").value = 33;
+                document.getElementById("input2").className = "input is-danger";
+                alert("Password is too short! Re-enter password.");
+            } else if(password.length >= 10 && password.length < 12){
+                document.getElementById("progrs").value = 66;
+                document.getElementById("passP").innerText = "This password is medium";
+                document.getElementById("input2").className = "input is-warning";
+                document.getElementById("passP").style.color = "blue";
+                alert("Password length is medium! Do it better.");
+            } else if(password.length >= 12 && password.length < 16){
+                document.getElementById("progrs").value = 100;
+                document.getElementById("input2").className = "input is-success";
+                document.getElementById("passP").innerText = "This password is perfect";
+                document.getElementById("passP").style.color = "green";
+                alert("Perfect password!");
+            } else {
+                document.getElementById("progrs").value = 0;
+                document.getElementById("input2").className = "input is-danger";
+                alert("Password is too long! Re-enter password.");
+            }
+
+            if(login == ""){
+                document.getElementById("emailP").style.color = "red";
+                document.getElementById("input1").className = "input is-danger";
+                document.getElementById("emailP").innerText = "This email is invalid";
+                alert("Enter email!");
+            } else {
+                document.getElementById("emailP").style.color = "green";
+                document.getElementById("input1").className = "input is-success";
+                document.getElementById("emailP").innerText = "This email is valid";
+            }
+        }
+    </script>
+</head>
+<body align="center">
+<header>
+    <br>
+    <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../MainMenu/index.html">
+                <img src="../../images/logo.jpg" alt="Chess Horse - perfect choice for curious!" width="30" height="40">
+            </a>
+        </div>
+
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="../MainMenu/index.html">
+                    Home
+                </a>
+                <a class="navbar-item" href="../F.A.Q./faq.html">
+                    F.A.Q.
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable is-hidden">
+                    <a class="navbar-link">
+                        Docs
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="../Instructions/instr.html">
+                            Instruction
+                        </a>
+                        <a class="navbar-item" href="../Analysis/anl1.html">
+                            Analysis
+                        </a>
+                        <a class="navbar-item" href="../Options/opt.html">
+                            Options
+                        </a>
+                        <a class="navbar-item" href="../Multimedia/multi.html">
+                            Multimedia
+                        </a>
+                        <a class="navbar-item" href="../Board/board.html">
+                            Board
+                        </a>
+                        <a class="navbar-item" href="../Information/info.html">
+                            Info
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item is-active" href="reg.html">
+                            Registration
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a class="button is-black" href="https://github.com/Supr3m3/Horse">
+                  <span class="icon">
+                    <i class="fas fa-download"></i>
+                  </span>
+                                <span>Download</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<br>
+
+<div class="columns is-centered">
+    <div class="box">
+        <div class="column">
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input id="input1" class="input" type="email" placeholder="Email" value="">
+                    <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                    <span class="icon is-small is-right">
+                              <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                </div>
+                <p id="emailP" class="help is-black">Enter email</p>
+            </div>
+
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input id="input2" class="input" type="password" placeholder="Password" value="">
+                    <span class="icon is-small is-left">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                    <span class="icon is-small is-right">
+                          <i class="fas fa-exclamation-triangle"></i>
+                        </span>
+                </div>
+                <p id="passP" class="help">Enter password</p>
+            </div>
+            <progress id="progrs" class="progress" value="0" max="100">0%</progress>
+
+            <div class="field">
+                <label class="label">Your aims</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="What are your main purposes?"></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input type="checkbox">
+                        <label class="checkbox">
+                        I agree to the <a href="https://www.spotify.com/int/legal/end-user-agreement/">terms and conditions</a>
+                        </label>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <a class="button is-black" onclick="Check()">Submit</a>
+                </div>
+                <div class="control">
+                    <a href="../MainMenu/index.html" class="button is-black">Cancel</a>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+</body>
+</html>
